@@ -17,11 +17,6 @@
   ],
   "author": "",
   "license": "ISC",
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run lint && npm run test:cover"
-    }
-  },
   "dependencies": {
     "aws-sdk": "^2.796.0",
     "uuid": "^8.3.1"
