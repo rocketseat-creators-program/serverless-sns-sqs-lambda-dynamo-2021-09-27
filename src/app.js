@@ -1,8 +1,7 @@
-
 const AWSXRay = require('aws-xray-sdk-core')
 const AWS = AWSXRay.captureAWS(require('aws-sdk'))
 
-const deleteAccount = async event => {
+const deleteAccount = event => {
   const sns = new AWS.SNS()
 
   const deleteAccountEvent = {
