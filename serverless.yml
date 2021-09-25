@@ -1,6 +1,9 @@
 service: serverless-rocketseat
 frameworkVersion: '2'
 
+plugins:
+  - serverless-resources-env
+
 provider:
   name: aws
   runtime: nodejs14.x
@@ -9,7 +12,30 @@ provider:
   memorySize: 128
   tracing:
     lambda: true
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - SNS:Publish
+      Resource:
+        - "*"
+    - Effect: Allow
+      Action:
+        - xray:PutTraceSegments
+        - xray:PutTelemetryRecords
+      Resource:
+        - "*"
+
+resources:
+  Resources:
+    DeleteAccountTopic:
+        Type: AWS::SNS::Topic
+        Properties:
+          DisplayName: 'Topic used for publishing deleted account events'
+          TopicName: DeleteAccountTopic
 
 functions:
   deleteAccount:
     handler: src/app.deleteAccount
+    custom:
+      env-resources:
+        - DeleteAccountTopic
