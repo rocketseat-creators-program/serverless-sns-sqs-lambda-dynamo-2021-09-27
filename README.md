@@ -13,5 +13,3 @@
 - Node.js v14 (`.nvmrc` incluso no projeto)
 - Conta na AWS (utilizaremos IAM e DynamoDB)
 - Serverless framework
-
-### Como rodar
