@@ -20,7 +20,8 @@
   "dependencies": {
     "aws-sdk": "^2.796.0",
     "aws-xray-sdk-core": "^3.3.3",
-    "uuid": "^8.3.1"
+    "uuid": "^8.3.1",
+    "uuid-by-string": "^3.0.4"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
