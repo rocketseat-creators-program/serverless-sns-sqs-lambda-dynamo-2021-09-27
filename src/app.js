@@ -13,7 +13,7 @@ const deleteAccount = event => {
 
   return sns.publish({
     Message: JSON.stringify(deleteAccountEvent),
-    TopicArn: process.env.CF_DeleteAccountTopic,
+    TopicArn: process.env.SNS_TOPIC,
   }).promise()
 }
 
