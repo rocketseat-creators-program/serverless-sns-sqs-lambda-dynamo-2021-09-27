@@ -2,11 +2,11 @@
 
 <img src="https://storage.googleapis.com/golden-wind/experts-club/capa-github.svg" />
 
-Existem momentos em que precisaremos processar dados, porém não precisamos fazer isso junto com uma requisição. Para não perdermos performance, utilizamos alguns recursos, dentre eles está o uso de mensagens e filas.
+Existem momentos em que precisaremos processar dados, porém não precisamos fazer isso junto com uma requisição. Para não perdermos performance, podemos utilizar alguns recursos, como por exemplo mensagens e filas.
 
 Nesta aula mostro a arquitetura de um serviço de auditoria, no qual usamos SNS, SQS, Lambda e DynamoDB para processar dados de forma assíncrona e gravarmos quando uma conta de usuário foi apagada.
 
-Utilizo o Serverless Framework para fazer o deploy de todos os recursos na AWS e o código das Lambdas é feito utilizando Node.js
+Utilizo o Serverless Framework para fazer o deploy de todos os recursos na AWS e o código das Lambdas (reponsáveis por enviar mensagens no SNS, ler mensagens da fila e gravar no DynamoDB) é feito utilizando Node.js.
 
 ## Expert
 
